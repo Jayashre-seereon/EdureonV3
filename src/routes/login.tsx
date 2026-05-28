@@ -89,8 +89,7 @@ function LoginPage() {
             ))}
           </div>
         </div>
-        <div className="relative text-xs text-sidebar-foreground/55">© 2026 Scholaris Technologies · All rights reserved</div>
-      </div>
+          </div>
 
       {/* Form panel */}
       <div className="flex items-center justify-center p-6 md:p-10">
