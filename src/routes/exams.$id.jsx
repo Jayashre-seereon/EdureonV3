@@ -1,9 +1,4 @@
-import {
-  createFileRoute,
-  useParams,
-  useNavigate,
-  Link,
-} from "@tanstack/react-router";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -51,10 +46,6 @@ import {
   useActivity,
   useQuestions,
 } from "@/lib/store";
-export const Route = createFileRoute("/exams/$id")({
-  head: () => ({ meta: [{ title: "Exam — Scholaris ERP" }] }),
-  component: ExamDetail,
-});
 function gradeOf(pct) {
   if (pct >= 91) return "A1";
   if (pct >= 81) return "A2";
@@ -65,8 +56,8 @@ function gradeOf(pct) {
   if (pct >= 33) return "D";
   return "E";
 }
-function ExamDetail() {
-  const { id } = useParams({ from: "/exams/$id" });
+export default function ExamDetail() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const exams = useExams();
   const allEntries = useMarkEntries();
@@ -152,7 +143,7 @@ function ExamDetail() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => navigate({ to: "/exams" })}
+              onClick={() => navigate("/exams")}
             >
               <ArrowLeft className="h-4 w-4" />
               Back

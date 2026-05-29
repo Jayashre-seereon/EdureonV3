@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,10 +29,6 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { NewInquiryDialog } from "@/components/new-inquiry-dialog";
 import { useInquiries, inquiriesApi, ADM_STAGES } from "@/lib/store";
-export const Route = createFileRoute("/admin/admissions")({
-  head: () => ({ meta: [{ title: "Admissions — Scholaris" }] }),
-  component: AdmissionsPage,
-});
 const stageColor = {
   Inquiry: "border-l-muted-foreground",
   Lead: "border-l-info",
@@ -44,7 +40,7 @@ const stageColor = {
 };
 const COUNSELORS = ["Sneha K.", "Rohit M.", "Priya S.", "Vikram T."];
 const SOURCES = ["Walk-in", "Website", "Referral", "Ad Campaign", "Phone"];
-function AdmissionsPage() {
+export default function AdmissionsPage() {
   const navigate = useNavigate();
   const all = useInquiries();
   const [q, setQ] = useState("");
@@ -288,10 +284,7 @@ function AdmissionsPage() {
                           className={`bg-card border border-l-4 ${stageColor[c.stage]} rounded-md p-3 hover:shadow-md transition cursor-grab active:cursor-grabbing ${selected.has(c.id) ? "ring-2 ring-primary" : ""}`}
                           onClick={(e) => {
                             if (e.target.closest("[data-stop]")) return;
-                            navigate({
-                              to: "/admin/admissions/$id",
-                              params: { id: c.id },
-                            });
+                            navigate(`/admin/admissions/${c.id}`);
                           }}
                         >
                           <div className="flex items-start gap-2.5">

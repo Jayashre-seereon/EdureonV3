@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -38,10 +38,6 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
-export const Route = createFileRoute("/super/institutes/")({
-  head: () => ({ meta: [{ title: "Institutes — Super Admin" }] }),
-  component: SuperInstitutesPage,
-});
 const inr = (n) =>
   "₹" +
   (n >= 1e7
@@ -59,7 +55,7 @@ const mrrTrend = [
   { m: "Oct", v: 498000 },
   { m: "Nov", v: 519000 },
 ];
-function SuperInstitutesPage() {
+export default function SuperInstitutesPage() {
   const institutes = useInstitutes();
   const navigate = useNavigate();
   const mrr = institutes.reduce((s, i) => s + i.mrr, 0);
@@ -219,12 +215,7 @@ function SuperInstitutesPage() {
                     <TableRow
                       key={i.id}
                       className="cursor-pointer hover:bg-muted/50"
-                      onClick={() =>
-                        navigate({
-                          to: "/super/institutes/$id",
-                          params: { id: i.id },
-                        })
-                      }
+                      onClick={() => navigate(`/super/institutes/${i.id}`)}
                     >
                       <TableCell>
                         <div className="font-medium">{i.name}</div>
@@ -266,8 +257,7 @@ function SuperInstitutesPage() {
                             {i.status}
                           </Badge>
                           <Link
-                            to="/super/institutes/$id"
-                            params={{ id: i.id }}
+                            to={`/super/institutes/${i.id}`}
                             onClick={(e) => e.stopPropagation()}
                             className="text-xs text-primary hover:underline"
                           >

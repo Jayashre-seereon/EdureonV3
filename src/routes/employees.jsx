@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -48,11 +47,7 @@ import { useEmployees, employeesApi } from "@/lib/store";
 import { useMemo, useState } from "react";
 import { EmployeeDialog } from "@/components/employee-dialog";
 import { toast } from "sonner";
-export const Route = createFileRoute("/employees")({
-  head: () => ({ meta: [{ title: "Employees — Scholaris ERP" }] }),
-  component: EmployeesPage,
-});
-function EmployeesPage() {
+export default function EmployeesPage() {
   const employees = useEmployees();
   const [q, setQ] = useState("");
   const [dept, setDept] = useState(null);

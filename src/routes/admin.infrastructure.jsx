@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -34,10 +33,6 @@ import { useState } from "react";
 import { KpiCard } from "@/components/kpi-card";
 import { CrudDialog } from "@/components/crud-dialog";
 import { toast } from "sonner";
-export const Route = createFileRoute("/admin/infrastructure")({
-  head: () => ({ meta: [{ title: "Infrastructure — Scholaris" }] }),
-  component: InfraPage,
-});
 const TREE = [
   {
     name: "Main Academic Block",
@@ -166,7 +161,7 @@ const TREE = [
     ],
   },
 ];
-function InfraPage() {
+export default function InfraPage() {
   const [tree, setTree] = useState(TREE);
   const [expanded, setExpanded] = useState(new Set(["Main Academic Block"]));
   const [q, setQ] = useState("");

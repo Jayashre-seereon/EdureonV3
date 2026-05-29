@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -43,10 +43,6 @@ import {
 } from "@/lib/store";
 import { useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/admin/admissions/$id")({
-  head: () => ({ meta: [{ title: "Inquiry Details — Admissions" }] }),
-  component: InquiryDetailPage,
-});
 const stageColor = {
   Inquiry: "bg-muted text-muted-foreground",
   Lead: "bg-info/15 text-info",
@@ -56,8 +52,8 @@ const stageColor = {
   "Fee Payment": "bg-chart-5/15 text-chart-5",
   Enrolled: "bg-success/15 text-success",
 };
-function InquiryDetailPage() {
-  const { id } = Route.useParams();
+export default function InquiryDetailPage() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const inquiries = useInquiries();
   useActivity();
@@ -108,7 +104,7 @@ function InquiryDetailPage() {
       dob: inq.dob,
     });
     toast.success(`${inq.name} enrolled as student`);
-    setTimeout(() => navigate({ to: "/students" }), 400);
+    setTimeout(() => navigate("/students"), 400);
   };
   return (
     <PageContainer>
@@ -143,7 +139,7 @@ function InquiryDetailPage() {
               className="text-destructive"
               onClick={() => {
                 inquiriesApi.remove(id);
-                navigate({ to: "/admin/admissions" });
+                navigate("/admin/admissions");
               }}
             >
               <Trash2 className="h-4 w-4" />

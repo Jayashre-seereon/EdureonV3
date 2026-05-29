@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -16,10 +16,6 @@ import {
   ArrowRight,
   Crown,
 } from "lucide-react";
-export const Route = createFileRoute("/teacher/classes")({
-  head: () => ({ meta: [{ title: "My Classes — Scholaris" }] }),
-  component: MyClasses,
-});
 const classes = [
   {
     section: "X-B",
@@ -54,7 +50,7 @@ const classes = [
     room: "G-03",
   },
 ];
-function MyClasses() {
+export default function MyClasses() {
   return (
     <PageContainer>
       <PageHeader

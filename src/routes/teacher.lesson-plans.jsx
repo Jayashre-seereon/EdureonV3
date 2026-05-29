@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -46,10 +46,6 @@ import {
   useSections,
   lessonPlansApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/teacher/lesson-plans")({
-  head: () => ({ meta: [{ title: "Lesson Plans — Scholaris" }] }),
-  component: LessonPlansPage,
-});
 const statusColor = {
   Draft: "bg-muted text-muted-foreground border-border",
   Submitted: "bg-info/10 text-info border-info/20",
@@ -62,7 +58,7 @@ const statusIcon = (s) => {
   if (s === "Changes Requested") return <FileEdit className="h-3 w-3" />;
   return <NotebookPen className="h-3 w-3" />;
 };
-function LessonPlansPage() {
+export default function LessonPlansPage() {
   const plans = useLessonPlans();
   const subjects = useSubjects();
   const sections = useSections();
@@ -287,8 +283,7 @@ function LessonPlansPage() {
           {visible.map((p) => (
             <Link
               key={p.id}
-              to="/teacher/lesson-plans/$id"
-              params={{ id: p.id }}
+              to={`/teacher/lesson-plans/${p.id}`}
               className="flex items-start gap-3 p-3 border rounded-md hover:bg-muted/30"
             >
               <div className="h-9 w-9 rounded-md flex items-center justify-center bg-primary/10 text-primary shrink-0">

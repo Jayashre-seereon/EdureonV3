@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,12 +33,8 @@ import { Plus, UserCog, ShieldCheck, Building2 } from "lucide-react";
 import { useAppUsers, useInstitutes, appUsersApi } from "@/lib/store";
 import { useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/super/users")({
-  head: () => ({ meta: [{ title: "Users — Super Admin" }] }),
-  component: SuperUsersPage,
-});
 const ASSIGNABLE_ROLES = ["admin", "principal", "accountant", "hr", "teacher"];
-function SuperUsersPage() {
+export default function SuperUsersPage() {
   const users = useAppUsers();
   const institutes = useInstitutes();
   const [q, setQ] = useState("");

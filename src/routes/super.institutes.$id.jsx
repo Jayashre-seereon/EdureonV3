@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -59,10 +59,6 @@ import {
   classDistribution,
 } from "@/lib/mock";
 import { toast } from "sonner";
-export const Route = createFileRoute("/super/institutes/$id")({
-  head: () => ({ meta: [{ title: "Institute Details — Super Admin" }] }),
-  component: InstituteDetailPage,
-});
 const inr = (n) =>
   "₹" +
   (n >= 1e7
@@ -70,8 +66,8 @@ const inr = (n) =>
     : n >= 1e5
       ? (n / 1e5).toFixed(2) + " L"
       : n.toLocaleString("en-IN"));
-function InstituteDetailPage() {
-  const { id } = Route.useParams();
+export default function InstituteDetailPage() {
+  const { id } = useParams();
   const institutes = useInstitutes();
   const users = useAppUsers();
   const students = useStudents();
@@ -106,7 +102,7 @@ function InstituteDetailPage() {
       description:
         "You can now see and manage everything as their admin would.",
     });
-    setTimeout(() => navigate({ to: "/" }), 400);
+    setTimeout(() => navigate("/"), 400);
   };
   return (
     <PageContainer>
@@ -142,7 +138,7 @@ function InstituteDetailPage() {
             <Button
               size="sm"
               className="gradient-primary border-0"
-              onClick={() => navigate({ to: "/super/users" })}
+              onClick={() => navigate("/super/users")}
             >
               <UserCog className="h-4 w-4" />
               Manage Users

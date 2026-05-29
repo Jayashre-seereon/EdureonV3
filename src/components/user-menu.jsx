@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { useRouter, Link } from "@tanstack/react-router";
+import { useNavigate, Link } from "react-router-dom";
 import {
   LogOut,
   User as UserIcon,
@@ -49,17 +49,17 @@ const SWITCHABLE = [
 ];
 export function UserMenu() {
   const { user, logout, switchRole } = useAuth();
-  const router = useRouter();
+  const navigate = useNavigate();
   if (!user) return null;
   const onLogout = () => {
     logout();
     toast.success("Signed out");
-    router.navigate({ to: "/login" });
+    navigate("/login");
   };
   const onSwitch = (role, label) => {
     switchRole(role);
     toast.success(`Switched to ${label}`);
-    router.navigate({ to: portalHomeForRole(role) });
+    navigate(portalHomeForRole(role));
   };
   return (
     <DropdownMenu>

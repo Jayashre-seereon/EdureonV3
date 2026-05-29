@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -38,11 +38,7 @@ import {
   useSections,
   materialsApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/teacher/materials")({
-  head: () => ({ meta: [{ title: "Study Materials — Scholaris" }] }),
-  component: MaterialsPage,
-});
-function MaterialsPage() {
+export default function MaterialsPage() {
   const materials = useMaterials();
   const subjects = useSubjects();
   const sections = useSections();
@@ -247,8 +243,7 @@ function MaterialsPage() {
           {visible.map((m) => (
             <Link
               key={m.id}
-              to="/teacher/materials/$id"
-              params={{ id: m.id }}
+              to={`/teacher/materials/${m.id}`}
               className="flex items-start gap-3 p-3 hover:bg-muted/40"
             >
               <div className="h-9 w-9 rounded-md flex items-center justify-center bg-info/10 text-info shrink-0">

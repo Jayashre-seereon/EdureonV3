@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -30,12 +30,8 @@ import {
   lessonPlansApi,
   activityApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/teacher/lesson-plans/$id")({
-  head: () => ({ meta: [{ title: "Lesson Plan — Scholaris" }] }),
-  component: LessonPlanDetail,
-});
-function LessonPlanDetail() {
-  const { id } = useParams({ from: "/teacher/lesson-plans/$id" });
+export default function LessonPlanDetail() {
+  const { id } = useParams();
   useLessonPlans();
   const materials = useMaterials();
   const plan = lessonPlansApi.get(id);

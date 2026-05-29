@@ -1,4 +1,4 @@
-import { createFileRoute, useRouter, Link } from "@tanstack/react-router";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "@/lib/auth";
 import { portalHomeForRole } from "@/lib/portal-nav";
@@ -14,13 +14,9 @@ import {
   Zap,
 } from "lucide-react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "Sign in — Scholaris ERP" }] }),
-  component: LoginPage,
-});
-function LoginPage() {
+export default function LoginPage() {
   const auth = useAuth();
-  const router = useRouter();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("rahul@dpsnorth.edu.in");
   const [password, setPassword] = useState("demo1234");
   const [loading, setLoading] = useState(false);
@@ -32,7 +28,7 @@ function LoginPage() {
     try {
       const u = await auth.login(email, password);
       toast.success("Welcome back");
-      router.navigate({ to: portalHomeForRole(u.role) });
+      navigate(portalHomeForRole(u.role));
     } catch {
       toast.error("Invalid credentials");
     } finally {
@@ -45,7 +41,7 @@ function LoginPage() {
     setLoading(true);
     try {
       const u = await auth.login(preset, "demo1234");
-      router.navigate({ to: portalHomeForRole(u.role) });
+      navigate(portalHomeForRole(u.role));
     } finally {
       setLoading(false);
     }

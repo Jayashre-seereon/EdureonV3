@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -51,10 +50,6 @@ import { useState } from "react";
 import { CrudDialog } from "@/components/crud-dialog";
 import { useEmployees } from "@/lib/store";
 import { toast } from "sonner";
-export const Route = createFileRoute("/admin/assets")({
-  head: () => ({ meta: [{ title: "Assets — Scholaris" }] }),
-  component: AssetsPage,
-});
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
 const newId = () => "AST-" + Math.floor(Math.random() * 9000 + 1000);
 const SEED_VENDORS = [
@@ -182,7 +177,7 @@ const ROOMS = [
   "Block A",
   "Block B",
 ];
-function AssetsPage() {
+export default function AssetsPage() {
   const employees = useEmployees();
   const [assets, setAssets] = useState(SEED_ASSETS);
   const [vendors, setVendors] = useState(SEED_VENDORS);

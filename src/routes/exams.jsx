@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -60,10 +60,6 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { CrudDialog } from "@/components/crud-dialog";
 import { useExams, useQuestions, examsApi, questionsApi } from "@/lib/store";
-export const Route = createFileRoute("/exams")({
-  head: () => ({ meta: [{ title: "Examinations — Scholaris ERP" }] }),
-  component: ExamsPage,
-});
 const marks = Array.from({ length: 14 }).map((_, i) => ({
   roll: i + 1,
   name:
@@ -174,7 +170,7 @@ function openQuestionPdf(q) {
       "Legacy seed question — edit and save it once to generate its PDF.",
     );
 }
-function ExamsPage() {
+export default function ExamsPage() {
   const [tab, setTab] = useState("dash");
   const exams = useExams();
   const questions = useQuestions();
@@ -409,7 +405,7 @@ function ExamsPage() {
                       className="cursor-pointer hover:bg-muted/40"
                       onClick={(e) => {
                         if (e.target.closest("[data-no-row]")) return;
-                        navigate({ to: "/exams/$id", params: { id: u.id } });
+                        navigate(`/exams/${u.id}`);
                       }}
                     >
                       <TableCell className="font-medium">{u.name}</TableCell>

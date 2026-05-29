@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -44,12 +44,8 @@ import {
 import { useState } from "react";
 import { toast } from "sonner";
 import { StudentDialog } from "@/components/student-dialog";
-export const Route = createFileRoute("/students/$id")({
-  head: () => ({ meta: [{ title: "Student Profile — Scholaris" }] }),
-  component: StudentDetailPage,
-});
-function StudentDetailPage() {
-  const { id } = Route.useParams();
+export default function StudentDetailPage() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const students = useStudents();
   const txns = useFeeTxns();
@@ -132,7 +128,7 @@ function StudentDetailPage() {
               className="text-destructive"
               onClick={() => {
                 studentsApi.remove(id);
-                navigate({ to: "/students" });
+                navigate("/students");
               }}
             >
               <Trash2 className="h-4 w-4" />

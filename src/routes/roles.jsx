@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -45,10 +44,6 @@ import {
   permOverridesApi,
 } from "@/lib/store";
 import { toast } from "sonner";
-export const Route = createFileRoute("/roles")({
-  head: () => ({ meta: [{ title: "Roles & Permissions — Scholaris ERP" }] }),
-  component: RolesPage,
-});
 const builtIn = [
   "Super Admin",
   "Principal",
@@ -127,7 +122,7 @@ function basePerm(role, mod) {
   return "—";
 }
 const cycle = (v) => (v === "—" ? "R" : v === "R" ? "RW" : "—");
-function RolesPage() {
+export default function RolesPage() {
   const customRoles = useCustomRoles();
   const overrides = usePermOverrides();
   const [roleOpen, setRoleOpen] = useState(false);

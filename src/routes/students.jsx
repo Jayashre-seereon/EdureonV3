@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -56,16 +56,12 @@ import { useStudents, studentsApi } from "@/lib/store";
 import { useMemo, useState } from "react";
 import { StudentDialog } from "@/components/student-dialog";
 import { toast } from "sonner";
-export const Route = createFileRoute("/students")({
-  head: () => ({ meta: [{ title: "Students — Scholaris ERP" }] }),
-  component: StudentsPage,
-});
 const feeColor = {
   Paid: "bg-success/10 text-success border-success/20",
   Pending: "bg-warning/15 text-warning border-warning/30",
   Overdue: "bg-destructive/10 text-destructive border-destructive/20",
 };
-function StudentsPage() {
+export default function StudentsPage() {
   const navigate = useNavigate();
   const students = useStudents();
   const [q, setQ] = useState("");
@@ -381,9 +377,7 @@ function StudentsPage() {
                   <TableRow
                     key={s.id}
                     className="hover:bg-muted/40 border-border/60 cursor-pointer"
-                    onClick={() =>
-                      navigate({ to: "/students/$id", params: { id: s.id } })
-                    }
+                    onClick={() => navigate(`/students/${s.id}`)}
                   >
                     <TableCell onClick={(e) => e.stopPropagation()}>
                       <Checkbox
@@ -449,12 +443,7 @@ function StudentsPage() {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem
-                            onClick={() =>
-                              navigate({
-                                to: "/students/$id",
-                                params: { id: s.id },
-                              })
-                            }
+                            onClick={() => navigate(`/students/${s.id}`)}
                           >
                             <Eye className="h-4 w-4" />
                             Open profile

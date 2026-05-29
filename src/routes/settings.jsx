@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -36,11 +35,7 @@ import {
   Zap,
   CheckCircle2,
 } from "lucide-react";
-export const Route = createFileRoute("/settings")({
-  head: () => ({ meta: [{ title: "Settings — Scholaris ERP" }] }),
-  component: SettingsPage,
-});
-function SettingsPage() {
+export default function SettingsPage() {
   const { user, updateProfile } = useAuth();
   const [profile, setProfile] = useState({
     institute: user?.institute ?? "Delhi Public School — North",
