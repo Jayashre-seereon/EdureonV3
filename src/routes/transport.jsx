@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -31,10 +30,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { CrudDialog } from "@/components/crud-dialog";
-export const Route = createFileRoute("/transport")({
-  head: () => ({ meta: [{ title: "Transport — Scholaris ERP" }] }),
-  component: TransportPage,
-});
 const seedRoutes = [
   {
     id: "RT-01",
@@ -174,7 +169,7 @@ const seedMaint = [
   { bus: "DL-1C-AB-4522", task: "AC Service", due: "12 Dec" },
   { bus: "DL-1C-AB-4523", task: "Battery Check", due: "18 Dec" },
 ];
-function TransportPage() {
+export default function TransportPage() {
   const [routes, setRoutes] = useState(seedRoutes);
   const [vehicles, setVehicles] = useState(seedVehicles);
   const [drivers, setDrivers] = useState(seedDrivers);

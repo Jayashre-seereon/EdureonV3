@@ -1,10 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
-export const Route = createFileRoute("/student/timetable")({
-  head: () => ({ meta: [{ title: "My Timetable — Scholaris" }] }),
-  component: StudentTimetable,
-});
 const periods = [
   "08:00",
   "08:45",
@@ -36,7 +31,7 @@ const TEACHERS = [
   "Coach Patil",
   "—",
 ];
-function StudentTimetable() {
+export default function StudentTimetable() {
   const todayIdx = (new Date().getDay() + 6) % 7;
   return (
     <PageContainer>

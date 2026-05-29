@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,12 +12,8 @@ import {
   materialsApi,
   activityApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/teacher/materials/$id")({
-  head: () => ({ meta: [{ title: "Material — Scholaris" }] }),
-  component: MaterialDetail,
-});
-function MaterialDetail() {
-  const { id } = useParams({ from: "/teacher/materials/$id" });
+export default function MaterialDetail() {
+  const { id } = useParams();
   useMaterials();
   const plans = useLessonPlans();
   const m = materialsApi.get(id);
@@ -127,8 +123,7 @@ function MaterialDetail() {
               {linkedPlans.map((p) => (
                 <Link
                   key={p.id}
-                  to="/teacher/lesson-plans/$id"
-                  params={{ id: p.id }}
+                  to={`/teacher/lesson-plans/${p.id}`}
                   className="block p-2 border rounded-md hover:bg-muted/40"
                 >
                   <div className="text-sm font-medium">{p.title}</div>

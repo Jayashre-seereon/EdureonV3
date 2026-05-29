@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -51,10 +50,6 @@ import {
 import { useState } from "react";
 import { PayrollDialog } from "@/components/payroll-dialog";
 import { toast } from "sonner";
-export const Route = createFileRoute("/payroll")({
-  head: () => ({ meta: [{ title: "Payroll — Scholaris ERP" }] }),
-  component: PayrollPage,
-});
 const inr = (n) =>
   "₹" + (n >= 1e5 ? (n / 1e5).toFixed(2) + " L" : n.toLocaleString("en-IN"));
 const statusColor = {
@@ -62,7 +57,7 @@ const statusColor = {
   Approved: "bg-info/10 text-info border-info/20",
   Paid: "bg-success/10 text-success border-success/20",
 };
-function PayrollPage() {
+export default function PayrollPage() {
   const runs = usePayrollRuns();
   const employees = useEmployees();
   const [open, setOpen] = useState(false);

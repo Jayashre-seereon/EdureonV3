@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -58,10 +57,6 @@ import {
 } from "recharts";
 import { useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/analytics")({
-  head: () => ({ meta: [{ title: "Analytics — Scholaris ERP" }] }),
-  component: AnalyticsPage,
-});
 const COLORS = [
   "var(--chart-1)",
   "var(--chart-2)",
@@ -120,7 +115,7 @@ function rangeMult(r) {
           ? 1.4
           : 1.1;
 }
-function AnalyticsPage() {
+export default function AnalyticsPage() {
   const institutes = useInstitutes();
   const [inst, setInst] = useState("all");
   const [range, setRange] = useState("90d");

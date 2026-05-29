@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -21,10 +20,6 @@ import {
 import { Download, IndianRupee, CreditCard } from "lucide-react";
 import { KpiCard } from "@/components/kpi-card";
 import { toast } from "sonner";
-export const Route = createFileRoute("/student/fees")({
-  head: () => ({ meta: [{ title: "My Fees — Scholaris" }] }),
-  component: StudentFees,
-});
 const installments = [
   {
     name: "Term 1 — Tuition",
@@ -98,7 +93,7 @@ const statusColor = {
   Due: "bg-warning/15 text-warning border-warning/20",
   Upcoming: "bg-muted text-muted-foreground border-border",
 };
-function StudentFees() {
+export default function StudentFees() {
   const total = installments.reduce((s, i) => s + i.amount, 0);
   const paid = installments
     .filter((i) => i.status === "Paid")

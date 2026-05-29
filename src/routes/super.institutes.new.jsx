@@ -1,4 +1,4 @@
-import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -31,10 +31,6 @@ import {
 import { useState } from "react";
 import { toast } from "sonner";
 import { institutesApi } from "@/lib/store";
-export const Route = createFileRoute("/super/institutes/new")({
-  head: () => ({ meta: [{ title: "New Institute — Scholaris" }] }),
-  component: NewInstitutePage,
-});
 const STEPS = [
   { id: 1, title: "Basic Info", desc: "Identity & branding" },
   { id: 2, title: "Contact & Address", desc: "Location details" },
@@ -55,8 +51,8 @@ const DOC_SLOTS = [
   "Land / Building Docs",
   "Other Supporting Document",
 ];
-function NewInstitutePage() {
-  const router = useRouter();
+export default function NewInstitutePage() {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     name: "",
@@ -125,7 +121,7 @@ function NewInstitutePage() {
     toast.success(`Institute "${form.name}" created`, {
       description: "Onboarding email sent to admin.",
     });
-    router.navigate({ to: "/super/institutes" });
+    navigate("/super/institutes");
   };
   return (
     <PageContainer>
@@ -137,7 +133,7 @@ function NewInstitutePage() {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => router.navigate({ to: "/super/institutes" })}
+            onClick={() => navigate("/super/institutes")}
           >
             Cancel
           </Button>

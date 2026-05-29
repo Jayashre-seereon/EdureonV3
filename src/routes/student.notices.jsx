@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,12 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Megaphone, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { useNotices, noticesApi } from "@/lib/store";
-export const Route = createFileRoute("/student/notices")({
-  head: () => ({ meta: [{ title: "Notices — Scholaris" }] }),
-  component: StudentNotices,
-});
 const WHO = "STU1000";
-function StudentNotices() {
+export default function StudentNotices() {
   const notices = useNotices();
   const visible = notices.filter(
     (n) =>

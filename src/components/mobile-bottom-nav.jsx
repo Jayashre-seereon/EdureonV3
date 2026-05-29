@@ -1,10 +1,10 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/lib/auth";
 import { navForRole } from "@/lib/portal-nav";
 import { cn } from "@/lib/utils";
 export function MobileBottomNav() {
   const { user } = useAuth();
-  const pathname = useRouterState({ select: (r) => r.location.pathname });
+  const { pathname } = useLocation();
   if (!user) return null;
   if (user.role !== "teacher" && user.role !== "student") return null;
   // Take first 5 items from first group

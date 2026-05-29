@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -24,14 +23,10 @@ import {
 import { useState, useMemo } from "react";
 import { toast } from "sonner";
 import { useAssignments, useSubmissions, submissionsApi } from "@/lib/store";
-export const Route = createFileRoute("/student/assignments")({
-  head: () => ({ meta: [{ title: "My Assignments — Scholaris" }] }),
-  component: StudentAssignments,
-});
 const STUDENT_ID = "STU1000";
 const STUDENT_NAME = "Aarav Sharma";
 const STUDENT_CLASS = "X-B";
-function StudentAssignments() {
+export default function StudentAssignments() {
   const assignments = useAssignments();
   const subs = useSubmissions();
   const [open, setOpen] = useState(null);

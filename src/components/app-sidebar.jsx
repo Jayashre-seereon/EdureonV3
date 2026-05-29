@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { GraduationCap, ChevronRight } from "lucide-react";
 import {
   Sidebar,
@@ -19,7 +19,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export function AppSidebar() {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
-  const pathname = useRouterState({ select: (r) => r.location.pathname });
+  const { pathname } = useLocation();
   const isActive = (url) =>
     url === "/" ? pathname === "/" : pathname.startsWith(url);
   const { user } = useAuth();

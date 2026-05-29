@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -33,13 +32,9 @@ import {
 import { useState } from "react";
 import { toast } from "sonner";
 import { useNotices, useSections, noticesApi } from "@/lib/store";
-export const Route = createFileRoute("/teacher/notices")({
-  head: () => ({ meta: [{ title: "Notices — Scholaris" }] }),
-  component: NoticesPage,
-});
 const cats = ["Academic", "Events", "Fees", "Holiday", "Exam", "General"];
 const auds = ["All", "Teachers", "Students", "Parents", "Staff", "Class"];
-function NoticesPage() {
+export default function NoticesPage() {
   const notices = useNotices();
   const sections = useSections();
   const [open, setOpen] = useState(false);

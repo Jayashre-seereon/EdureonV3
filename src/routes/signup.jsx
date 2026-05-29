@@ -1,4 +1,4 @@
-import { createFileRoute, useRouter, Link } from "@tanstack/react-router";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
@@ -7,13 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { GraduationCap, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/signup")({
-  head: () => ({ meta: [{ title: "Start a trial — Scholaris ERP" }] }),
-  component: SignupPage,
-});
-function SignupPage() {
+export default function SignupPage() {
   const auth = useAuth();
-  const router = useRouter();
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -39,7 +35,7 @@ function SignupPage() {
         password: form.password,
       });
       toast.success("Workspace created");
-      router.navigate({ to: "/" });
+      navigate("/");
     } finally {
       setLoading(false);
     }

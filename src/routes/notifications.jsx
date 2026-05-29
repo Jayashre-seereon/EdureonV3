@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,10 +29,6 @@ import {
   useExams,
   useAssignments,
 } from "@/lib/store";
-export const Route = createFileRoute("/notifications")({
-  head: () => ({ meta: [{ title: "Notifications — Scholaris ERP" }] }),
-  component: NotificationsPage,
-});
 const ago = (ts) => {
   const diff = Date.now() - ts;
   if (diff < 60_000) return "just now";
@@ -40,7 +36,7 @@ const ago = (ts) => {
   if (diff < 86_400_000) return `${Math.floor(diff / 3_600_000)}h`;
   return `${Math.floor(diff / 86_400_000)}d`;
 };
-function NotificationsPage() {
+export default function NotificationsPage() {
   const notices = useNotices();
   const leaves = useLeaveRequests();
   const corrections = useCorrectionRequests();

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -23,10 +22,6 @@ import {
   Download,
 } from "lucide-react";
 import { useState } from "react";
-export const Route = createFileRoute("/admin/dms")({
-  head: () => ({ meta: [{ title: "Documents — Scholaris" }] }),
-  component: DmsPage,
-});
 const FOLDERS = [
   {
     name: "Institute Documents",
@@ -132,7 +127,7 @@ const statusColor = {
   Pending: "bg-warning/15 text-warning border-warning/20",
   Rejected: "bg-destructive/10 text-destructive border-destructive/20",
 };
-function DmsPage() {
+export default function DmsPage() {
   const [active, setActive] = useState("All");
   const [q, setQ] = useState("");
   const filtered = seed.filter(

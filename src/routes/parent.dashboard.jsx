@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,12 +23,8 @@ import {
   useLeaveRequests,
 } from "@/lib/store";
 import { useMemo } from "react";
-export const Route = createFileRoute("/parent/dashboard")({
-  head: () => ({ meta: [{ title: "Parent · Dashboard — Scholaris" }] }),
-  component: ParentDashboard,
-});
 const CHILD_ID = "STU1000";
-function ParentDashboard() {
+export default function ParentDashboard() {
   const students = useStudents();
   const assignments = useAssignments();
   const subs = useSubmissions();
@@ -77,7 +73,7 @@ function ParentDashboard() {
         description={`Class ${klass} · ${child?.admissionNo}`}
         actions={
           <Button size="sm" asChild>
-            <Link to="/parent/children/$id" params={{ id: CHILD_ID }}>
+            <Link to={`/parent/children/${CHILD_ID}`}>
               Open profile
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -210,9 +206,7 @@ function ParentDashboard() {
               Leave requests
             </CardTitle>
             <Button size="sm" asChild>
-              <Link to="/parent/children/$id" params={{ id: CHILD_ID }}>
-                Manage
-              </Link>
+              <Link to={`/parent/children/${CHILD_ID}`}>Manage</Link>
             </Button>
           </CardHeader>
           <CardContent className="space-y-2">

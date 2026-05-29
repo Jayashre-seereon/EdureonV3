@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -56,10 +55,6 @@ import { useFeeTxns, feeApi } from "@/lib/store";
 import { useState } from "react";
 import { FeeDialog } from "@/components/fee-dialog";
 import { toast } from "sonner";
-export const Route = createFileRoute("/fees")({
-  head: () => ({ meta: [{ title: "Fees & Finance — Scholaris ERP" }] }),
-  component: FeesPage,
-});
 const inr = (n) =>
   "₹" + (n >= 1e5 ? (n / 1e5).toFixed(2) + " L" : n.toLocaleString("en-IN"));
 const COLORS = [
@@ -81,7 +76,7 @@ const statusColor = {
   Pending: "bg-warning/15 text-warning border-warning/30",
   Failed: "bg-destructive/10 text-destructive border-destructive/20",
 };
-function FeesPage() {
+export default function FeesPage() {
   const tx = useFeeTxns();
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState(null);

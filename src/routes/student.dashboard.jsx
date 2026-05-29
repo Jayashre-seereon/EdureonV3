@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -35,13 +35,9 @@ import {
   useAcademicCalendar,
 } from "@/lib/store";
 import { useMemo } from "react";
-export const Route = createFileRoute("/student/dashboard")({
-  head: () => ({ meta: [{ title: "Student · Dashboard — Scholaris" }] }),
-  component: StudentDashboard,
-});
 const STUDENT_ID = "STU1000";
 const STUDENT_CLASS = "X-B";
-function StudentDashboard() {
+export default function StudentDashboard() {
   const { user } = useAuth();
   const students = useStudents();
   const assignments = useAssignments();

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -38,10 +37,6 @@ import {
 } from "recharts";
 import { KpiCard } from "@/components/kpi-card";
 import { toast } from "sonner";
-export const Route = createFileRoute("/student/results")({
-  head: () => ({ meta: [{ title: "My Results — Scholaris" }] }),
-  component: StudentResults,
-});
 const EXAMS = [
   "Mid-Term II — 2025-26",
   "Unit Test 3 — 2025-26",
@@ -111,7 +106,7 @@ const grade = (pct) =>
             : pct >= 41
               ? "C2"
               : "D";
-function StudentResults() {
+export default function StudentResults() {
   const [exam, setExam] = useState(EXAMS[0]);
   const rows = data[exam];
   const total = rows.reduce((s, r) => s + r.my, 0);

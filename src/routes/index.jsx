@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -48,12 +47,8 @@ import {
 } from "@/lib/mock";
 import { useAuth } from "@/lib/auth";
 import { portalHomeForRole } from "@/lib/portal-nav";
-import { useRouter } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Dashboard — Scholaris ERP" }] }),
-  component: Dashboard,
-});
 const inr = (n) =>
   "₹" +
   (n >= 1e7
@@ -68,14 +63,14 @@ const COLORS = [
   "var(--chart-4)",
   "var(--chart-5)",
 ];
-function Dashboard() {
+export default function Dashboard() {
   const { user } = useAuth();
-  const router = useRouter();
+  const navigate = useNavigate();
   useEffect(() => {
     if (!user) return;
     const target = portalHomeForRole(user.role);
-    if (target !== "/") router.navigate({ to: target });
-  }, [user, router]);
+    if (target !== "/") navigate(target);
+  }, [user, navigate]);
   return (
     <PageContainer>
       <PageHeader

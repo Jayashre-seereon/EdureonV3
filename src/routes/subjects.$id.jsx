@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -27,13 +27,9 @@ import {
   useSubjectMappings,
   activityApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/subjects/$id")({
-  head: () => ({ meta: [{ title: "Subject Detail — Scholaris ERP" }] }),
-  component: SubjectDetail,
-});
-function SubjectDetail() {
-  const { id } = Route.useParams();
-  const nav = useNavigate();
+export default function SubjectDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const subjects = useSubjects();
   const sections = useSections();
   const mappings = useSubjectMappings();
@@ -43,7 +39,7 @@ function SubjectDetail() {
     return (
       <PageContainer>
         <PageHeader title="Subject not found" eyebrow="Academic" />
-        <Button variant="outline" onClick={() => nav({ to: "/classes" })}>
+        <Button variant="outline" onClick={() => navigate("/classes")}>
           <ArrowLeft className="h-4 w-4" />
           Back
         </Button>
@@ -93,7 +89,7 @@ function SubjectDetail() {
               onClick={() => {
                 subjectsApi.remove(sub.id);
                 toast.success("Deleted");
-                nav({ to: "/classes" });
+                navigate("/classes");
               }}
             >
               <Trash2 className="h-4 w-4" />
@@ -178,10 +174,7 @@ function SubjectDetail() {
                       <TableRow
                         key={m.id}
                         className="cursor-pointer"
-                        onClick={() =>
-                          sec &&
-                          nav({ to: "/classes/$id", params: { id: sec.id } })
-                        }
+                        onClick={() => sec && navigate(`/classes/${sec.id}`)}
                       >
                         <TableCell>
                           <Badge variant="secondary">

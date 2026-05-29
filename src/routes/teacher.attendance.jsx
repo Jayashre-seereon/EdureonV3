@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -35,10 +34,6 @@ import {
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { useStudents } from "@/lib/store";
-export const Route = createFileRoute("/teacher/attendance")({
-  head: () => ({ meta: [{ title: "Take Attendance — Scholaris" }] }),
-  component: TakeAttendancePage,
-});
 const SECTIONS = ["X-B", "X-A", "IX-A", "VIII-B"];
 const fmt = (d) =>
   d.toLocaleDateString("en-IN", {
@@ -46,7 +41,7 @@ const fmt = (d) =>
     day: "2-digit",
     month: "short",
   });
-function TakeAttendancePage() {
+export default function TakeAttendancePage() {
   const all = useStudents();
   const [section, setSection] = useState("X-B");
   const [date, setDate] = useState(new Date());

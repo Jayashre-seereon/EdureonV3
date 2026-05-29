@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,12 +14,8 @@ import { FileBox, Download, Search, ExternalLink } from "lucide-react";
 import { useState, useMemo } from "react";
 import { toast } from "sonner";
 import { useMaterials, useSubjects, materialsApi } from "@/lib/store";
-export const Route = createFileRoute("/student/materials")({
-  head: () => ({ meta: [{ title: "Study Materials — Scholaris" }] }),
-  component: StudentMaterials,
-});
 const STUDENT_CLASS = "X-B";
-function StudentMaterials() {
+export default function StudentMaterials() {
   const materials = useMaterials();
   const subjects = useSubjects();
   const [q, setQ] = useState("");
