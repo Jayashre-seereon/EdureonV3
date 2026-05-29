@@ -1,4 +1,3 @@
-
 # Academic Domain — Production Build Plan
 
 This is a large, multi-file build. I'll execute it in 4 sequential batches so the app stays compiling between batches and you can review progress. All work is scoped strictly to the Academic domain — no changes to operations, finance, assets, transport, or infrastructure.

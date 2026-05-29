@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,11 +17,7 @@ import { useStudents } from "@/lib/store";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { InviteDialog } from "@/components/invite-dialog";
-export const Route = createFileRoute("/parents")({
-  head: () => ({ meta: [{ title: "Parents — Scholaris ERP" }] }),
-  component: ParentsPage,
-});
-function ParentsPage() {
+export default function ParentsPage() {
   const students = useStudents();
   const [q, setQ] = useState("");
   const parents = useMemo(() => {

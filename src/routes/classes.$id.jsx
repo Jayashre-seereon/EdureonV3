@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -41,13 +41,9 @@ import {
   useStudents,
   activityApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/classes/$id")({
-  head: () => ({ meta: [{ title: "Class Detail — Scholaris ERP" }] }),
-  component: ClassDetail,
-});
-function ClassDetail() {
-  const { id } = Route.useParams();
-  const nav = useNavigate();
+export default function ClassDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const sections = useSections();
   const subjects = useSubjects();
   const mappings = useSubjectMappings();
@@ -58,7 +54,7 @@ function ClassDetail() {
     return (
       <PageContainer>
         <PageHeader title="Class not found" eyebrow="Academic" />
-        <Button variant="outline" onClick={() => nav({ to: "/classes" })}>
+        <Button variant="outline" onClick={() => navigate("/classes")}>
           <ArrowLeft className="h-4 w-4" />
           Back
         </Button>
@@ -109,7 +105,7 @@ function ClassDetail() {
               onClick={() => {
                 sectionsApi.remove(sec.id);
                 toast.success("Deleted");
-                nav({ to: "/classes" });
+                navigate("/classes");
               }}
             >
               <Trash2 className="h-4 w-4" />
@@ -206,9 +202,7 @@ function ClassDetail() {
                     <TableRow
                       key={s.id}
                       className="cursor-pointer"
-                      onClick={() =>
-                        nav({ to: "/students/$id", params: { id: s.id } })
-                      }
+                      onClick={() => navigate(`/students/${s.id}`)}
                     >
                       <TableCell className="font-mono text-xs">
                         {s.id}
@@ -259,10 +253,7 @@ function ClassDetail() {
                       <TableRow
                         key={m.id}
                         className="cursor-pointer"
-                        onClick={() =>
-                          sub &&
-                          nav({ to: "/subjects/$id", params: { id: sub.id } })
-                        }
+                        onClick={() => sub && navigate(`/subjects/${sub.id}`)}
                       >
                         <TableCell className="font-medium">
                           {sub?.name ?? m.subjectId}

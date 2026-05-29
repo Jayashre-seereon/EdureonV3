@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -71,11 +70,7 @@ import {
 } from "recharts";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/attendance")({
-  head: () => ({ meta: [{ title: "Attendance — Scholaris ERP" }] }),
-  component: AttendancePage,
-});
-function AttendancePage() {
+export default function AttendancePage() {
   const students = useStudents().slice(0, 32);
   const leaves = useLeaveRequests();
   const corrections = useCorrectionRequests();

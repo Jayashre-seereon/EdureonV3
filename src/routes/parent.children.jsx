@@ -1,15 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useStudents } from "@/lib/store";
 
-export const Route = createFileRoute("/parent/children")({
-  head: () => ({ meta: [{ title: "My Children - Scholaris" }] }),
-  component: ParentChildrenPage,
-});
-
-function ParentChildrenPage() {
+export default function ParentChildrenPage() {
   const students = useStudents();
   const myKids = students.slice(0, 2); // demo: first two
 
@@ -22,7 +17,7 @@ function ParentChildrenPage() {
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {myKids.map((k) => (
-          <Link key={k.id} to="/parent/children/$id" params={{ id: k.id }}>
+          <Link key={k.id} to={`/parent/children/${k.id}`}>
             <Card className="hover:shadow-md transition-shadow cursor-pointer">
               <CardContent className="p-4 flex items-start gap-3">
                 <div className="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">

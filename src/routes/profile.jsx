@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
@@ -27,11 +26,7 @@ import {
   Shield,
 } from "lucide-react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/profile")({
-  head: () => ({ meta: [{ title: "My Profile — Scholaris ERP" }] }),
-  component: ProfilePage,
-});
-function ProfilePage() {
+export default function ProfilePage() {
   const { user, updateProfile } = useAuth();
   const fileRef = useRef(null);
   const [form, setForm] = useState({

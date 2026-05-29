@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -50,10 +49,6 @@ import {
 } from "recharts";
 import { KpiCard } from "@/components/kpi-card";
 import { toast } from "sonner";
-export const Route = createFileRoute("/admin/expenses")({
-  head: () => ({ meta: [{ title: "Expenses — Scholaris" }] }),
-  component: ExpensesPage,
-});
 const CATS = [
   "Utilities",
   "Office Supplies",
@@ -164,7 +159,7 @@ const statusColor = {
   Approved: "bg-info/10 text-info border-info/20",
   Paid: "bg-success/10 text-success border-success/20",
 };
-function ExpensesPage() {
+export default function ExpensesPage() {
   const [items, setItems] = useState(seed);
   const [filter, setFilter] = useState("All");
   const [status, setStatus] = useState("All");

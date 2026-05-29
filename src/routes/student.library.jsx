@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -22,10 +21,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Search } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/student/library")({
-  head: () => ({ meta: [{ title: "Library — Scholaris" }] }),
-  component: StudentLibrary,
-});
 const issued = [
   {
     title: "Hall & Knight — Higher Algebra",
@@ -84,7 +79,7 @@ const history = [
   { title: "Ignited Minds", returned: "12 Oct 2025", fine: 0 },
   { title: "Class IX NCERT — Beehive", returned: "20 Aug 2025", fine: 10 },
 ];
-function StudentLibrary() {
+export default function StudentLibrary() {
   const [q, setQ] = useState("");
   const results = catalog.filter(
     (c) => !q || (c.title + c.author).toLowerCase().includes(q.toLowerCase()),

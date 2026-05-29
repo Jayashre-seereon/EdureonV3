@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -31,12 +31,8 @@ import {
   lessonPlansApi,
 } from "@/lib/store";
 import { useMemo } from "react";
-export const Route = createFileRoute("/teacher/dashboard")({
-  head: () => ({ meta: [{ title: "Teacher · Dashboard — Scholaris" }] }),
-  component: TeacherDashboard,
-});
 const TEACHER = "A. Mehta";
-function TeacherDashboard() {
+export default function TeacherDashboard() {
   const { user } = useAuth();
   const name = user?.name?.split(" ")[0] ?? "Teacher";
   const assignments = useAssignments();
@@ -232,8 +228,7 @@ function TeacherDashboard() {
             {draftPlans.slice(0, 4).map((p) => (
               <Link
                 key={p.id}
-                to="/teacher/lesson-plans/$id"
-                params={{ id: p.id }}
+                to={`/teacher/lesson-plans/${p.id}`}
                 className="block p-2.5 rounded-md border hover:bg-muted/40"
               >
                 <div className="text-sm font-medium truncate">{p.title}</div>

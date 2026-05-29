@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -46,10 +45,6 @@ import {
 import { Fragment, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { useTimetable, useTimetableMeta, timetableApi } from "@/lib/store";
-export const Route = createFileRoute("/timetable")({
-  head: () => ({ meta: [{ title: "Timetable — Scholaris ERP" }] }),
-  component: TimetablePage,
-});
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const periods = [
   "08:00",
@@ -138,7 +133,7 @@ function subjectColor(name) {
 }
 const isBreak = (p) => p === 3 || p === 6;
 const breakLabel = (p) => (p === 3 ? "Short Break" : "Lunch");
-function TimetablePage() {
+export default function TimetablePage() {
   const overrides = useTimetable();
   const meta = useTimetableMeta();
   const [klass, setKlass] = useState("X-B");

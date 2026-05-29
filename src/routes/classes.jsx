@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -52,12 +52,8 @@ import {
   subjectMappingsApi,
   academicCalendarApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/classes")({
-  head: () => ({ meta: [{ title: "Classes & Sections — Scholaris ERP" }] }),
-  component: ClassesPage,
-});
-function ClassesPage() {
-  const nav = useNavigate();
+export default function ClassesPage() {
+  const navigate = useNavigate();
   const sections = useSections();
   const subjects = useSubjects();
   const mappings = useSubjectMappings();
@@ -211,9 +207,7 @@ function ClassesPage() {
               <Card
                 key={s.id}
                 className="border-border/60 hover:border-primary/40 cursor-pointer"
-                onClick={() =>
-                  nav({ to: "/classes/$id", params: { id: s.id } })
-                }
+                onClick={() => navigate(`/classes/${s.id}`)}
               >
                 <CardHeader
                   className="pb-3"
@@ -324,9 +318,7 @@ function ClassesPage() {
                     <TableRow
                       key={s.id}
                       className="cursor-pointer"
-                      onClick={() =>
-                        nav({ to: "/subjects/$id", params: { id: s.id } })
-                      }
+                      onClick={() => navigate(`/subjects/${s.id}`)}
                     >
                       <TableCell className="font-mono text-xs">
                         {s.code}

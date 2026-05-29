@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -43,10 +42,6 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { useNotices, noticesApi, useSections } from "@/lib/store";
 import { useAuth } from "@/lib/auth";
-export const Route = createFileRoute("/communication")({
-  head: () => ({ meta: [{ title: "Communication — Scholaris ERP" }] }),
-  component: CommsPage,
-});
 const channels = [
   { d: "Mon", sms: 1240, push: 4820, email: 980 },
   { d: "Tue", sms: 1480, push: 5210, email: 1120 },
@@ -55,7 +50,7 @@ const channels = [
   { d: "Fri", sms: 1840, push: 6120, email: 1420 },
   { d: "Sat", sms: 980, push: 3920, email: 720 },
 ];
-function CommsPage() {
+export default function CommsPage() {
   const notices = useNotices();
   const klasses = useSections();
   const { user } = useAuth();

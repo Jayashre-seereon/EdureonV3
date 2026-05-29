@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -19,10 +18,6 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
-export const Route = createFileRoute("/student/attendance")({
-  head: () => ({ meta: [{ title: "My Attendance — Scholaris" }] }),
-  component: StudentAttendance,
-});
 // Generate Nov calendar with statuses
 const now = new Date();
 const year = now.getFullYear();
@@ -51,7 +46,7 @@ const trend = [
   { month: "Oct", pct: 92 },
   { month: "Nov", pct: 93 },
 ];
-function StudentAttendance() {
+export default function StudentAttendance() {
   const present = marks.filter((m) => m === "P").length;
   const absent = marks.filter((m) => m === "A").length;
   const leave = marks.filter((m) => m === "L").length;

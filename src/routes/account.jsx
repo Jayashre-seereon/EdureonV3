@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
@@ -26,11 +25,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/account")({
-  head: () => ({ meta: [{ title: "Account Settings — Scholaris ERP" }] }),
-  component: AccountPage,
-});
-function AccountPage() {
+export default function AccountPage() {
   const { user, changePassword, logout } = useAuth();
   const [pwd, setPwd] = useState({ current: "", next: "", confirm: "" });
   const [prefs, setPrefs] = useState({

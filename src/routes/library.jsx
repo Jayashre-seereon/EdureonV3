@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -49,10 +48,6 @@ import { toast } from "sonner";
 import { useState, useMemo } from "react";
 import { CrudDialog } from "@/components/crud-dialog";
 import { useStudents } from "@/lib/store";
-export const Route = createFileRoute("/library")({
-  head: () => ({ meta: [{ title: "Library — Scholaris ERP" }] }),
-  component: LibraryPage,
-});
 const SEED_BOOKS = [
   {
     isbn: "9780140328721",
@@ -146,7 +141,7 @@ function calcFine(iss, refDate = today()) {
   const overdue = daysBetween(iss.dueOn, refDate);
   return overdue > 0 ? overdue * iss.feePerDay : 0;
 }
-function LibraryPage() {
+export default function LibraryPage() {
   const students = useStudents();
   const [books, setBooks] = useState(SEED_BOOKS);
   const [issues, setIssues] = useState(SEED_ISSUES);

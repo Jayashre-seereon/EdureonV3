@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -39,10 +38,6 @@ import {
 import { Plus, Plane, FileUp } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/teacher/leave")({
-  head: () => ({ meta: [{ title: "Leave Application — Scholaris" }] }),
-  component: LeavePage,
-});
 const balances = [
   {
     type: "Casual Leave (CL)",
@@ -119,7 +114,7 @@ const statusColor = {
   Approved: "bg-success/10 text-success border-success/20",
   Rejected: "bg-destructive/10 text-destructive border-destructive/20",
 };
-function LeavePage() {
+export default function LeavePage() {
   const [items, setItems] = useState(seed);
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({

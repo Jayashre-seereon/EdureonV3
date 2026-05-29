@@ -1,15 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, CheckCircle2, GraduationCap, Loader2 } from "lucide-react";
-export const Route = createFileRoute("/forgot-password")({
-  head: () => ({ meta: [{ title: "Reset password — Scholaris ERP" }] }),
-  component: ForgotPasswordPage,
-});
-function ForgotPasswordPage() {
+export default function ForgotPasswordPage() {
   const auth = useAuth();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);

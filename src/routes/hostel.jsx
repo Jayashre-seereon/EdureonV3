@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -48,10 +47,6 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { CrudDialog } from "@/components/crud-dialog";
 import { useStudents } from "@/lib/store";
-export const Route = createFileRoute("/hostel")({
-  head: () => ({ meta: [{ title: "Hostel — Scholaris ERP" }] }),
-  component: HostelPage,
-});
 const SEED = [
   {
     name: "Aravalli Block",
@@ -99,7 +94,7 @@ const SEED = [
     ],
   },
 ];
-function HostelPage() {
+export default function HostelPage() {
   const students = useStudents();
   const [blocks, setBlocks] = useState(SEED);
   const [addBlock, setAddBlock] = useState(false);

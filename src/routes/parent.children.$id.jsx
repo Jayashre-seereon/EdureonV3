@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -36,12 +36,8 @@ import {
   useLeaveRequests,
   leaveApi,
 } from "@/lib/store";
-export const Route = createFileRoute("/parent/children/$id")({
-  head: () => ({ meta: [{ title: "Child Profile — Scholaris" }] }),
-  component: ChildProfile,
-});
-function ChildProfile() {
-  const { id } = useParams({ from: "/parent/children/$id" });
+export default function ChildProfile() {
+  const { id } = useParams();
   const students = useStudents();
   const assignments = useAssignments();
   const subs = useSubmissions();

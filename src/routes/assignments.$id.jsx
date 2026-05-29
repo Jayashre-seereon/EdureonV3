@@ -1,9 +1,4 @@
-import {
-  createFileRoute,
-  useParams,
-  Link,
-  useNavigate,
-} from "@tanstack/react-router";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -46,12 +41,8 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/assignments/$id")({
-  head: () => ({ meta: [{ title: "Assignment — Scholaris ERP" }] }),
-  component: AssignmentDetail,
-});
-function AssignmentDetail() {
-  const { id } = useParams({ from: "/assignments/$id" });
+export default function AssignmentDetail() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const assignments = useAssignments();
   const allSubs = useSubmissions();
@@ -105,7 +96,7 @@ function AssignmentDetail() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => navigate({ to: "/assignments" })}
+              onClick={() => navigate("/assignments")}
             >
               <ArrowLeft className="h-4 w-4" />
               Back
@@ -117,7 +108,7 @@ function AssignmentDetail() {
                 const nid = assignmentsApi.duplicate(a.id);
                 if (nid) {
                   toast.success("Duplicated");
-                  navigate({ to: "/assignments/$id", params: { id: nid } });
+                  navigate(`/assignments/${nid}`);
                 }
               }}
             >

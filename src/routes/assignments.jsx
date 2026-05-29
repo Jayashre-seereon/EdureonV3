@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "react-router-dom";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -55,10 +55,6 @@ import {
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { assignmentsApi, useAssignments, useSubmissions } from "@/lib/store";
-export const Route = createFileRoute("/assignments")({
-  head: () => ({ meta: [{ title: "Assignments — Scholaris ERP" }] }),
-  component: AssignmentsPage,
-});
 const SUBJECTS = ["Math", "Science", "English", "Social", "Hindi", "CS"];
 const CLASSES = ["VI-A", "VII-A", "VIII-A", "IX-A", "X-B", "XI-C", "XII-A"];
 const TEACHERS = [
@@ -69,7 +65,7 @@ const TEACHERS = [
   "N. Patel",
   "R. Khanna",
 ];
-function AssignmentsPage() {
+export default function AssignmentsPage() {
   const items = useAssignments();
   const allSubs = useSubmissions();
   const navigate = useNavigate();
@@ -464,10 +460,7 @@ function AssignmentsPage() {
                         className="cursor-pointer hover:bg-muted/40"
                         onClick={(e) => {
                           if (e.target.closest("[data-no-row]")) return;
-                          navigate({
-                            to: "/assignments/$id",
-                            params: { id: a.id },
-                          });
+                          navigate(`/assignments/${a.id}`);
                         }}
                       >
                         <TableCell data-no-row>
@@ -535,9 +528,7 @@ function AssignmentsPage() {
               <Card
                 key={a.id}
                 className="border-border/60 hover:border-primary/40 transition-colors cursor-pointer"
-                onClick={() =>
-                  navigate({ to: "/assignments/$id", params: { id: a.id } })
-                }
+                onClick={() => navigate(`/assignments/${a.id}`)}
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-2">

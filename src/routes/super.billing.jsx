@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import { KpiCard } from "@/components/kpi-card";
 import {
@@ -44,10 +43,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-export const Route = createFileRoute("/super/billing")({
-  head: () => ({ meta: [{ title: "Subscriptions — Super Admin" }] }),
-  component: BillingPage,
-});
 const plans = [
   {
     name: "Growth",
@@ -165,7 +160,7 @@ const flags = [
     scope: "Business+",
   },
 ];
-function BillingPage() {
+export default function BillingPage() {
   const [pay, setPay] = useState(null);
   const [subscribed, setSubscribed] = useState("Business");
   return (

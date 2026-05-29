@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageContainer, PageHeader } from "@/components/page-shell";
 import {
   Card,
@@ -28,10 +27,6 @@ import {
 import { Download, History, Search } from "lucide-react";
 import { useState } from "react";
 import { KpiCard } from "@/components/kpi-card";
-export const Route = createFileRoute("/admin/audit")({
-  head: () => ({ meta: [{ title: "Audit Log — Scholaris" }] }),
-  component: AuditPage,
-});
 const ACTIONS = [
   "Created",
   "Updated",
@@ -139,7 +134,7 @@ const actionColor = {
   "Logged in": "bg-muted text-muted-foreground border-border",
   Exported: "bg-accent/15 text-accent border-accent/20",
 };
-function AuditPage() {
+export default function AuditPage() {
   const [q, setQ] = useState("");
   const [act, setAct] = useState("All");
   const [mod, setMod] = useState("All");
