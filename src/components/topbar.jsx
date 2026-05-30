@@ -10,10 +10,10 @@ export function Topbar() {
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
-  return (
-    <header className="sticky top-0 z-30 h-14 border-b bg-background/80 backdrop-blur-md flex items-center gap-2 px-3 md:px-4">
+  return (  
+    <header className="sticky top-0 z-30 h-14 border-b bg-background/80 backdrop-blur-md flex items-center justify-between gap-2 px-3 md:px-4">
       <SidebarTrigger className="text-muted-foreground hover:text-foreground" />
-      <div className="hidden md:flex relative flex-1 max-w-md ml-2">
+      <div className="hidden md:flex relative flex-1 max-w-full ml-0">
         <Search className="h-4 w-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
         <Input
           placeholder="Search students, employees, classes…"
