@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "./ui/card";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 export function KpiCard({ label, value, delta, icon, tone = "default" }) {
   const positive = (delta ?? 0) >= 0;
   const toneClass = {

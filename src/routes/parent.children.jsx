@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { useStudents } from "@/lib/store";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { useStudents } from "../lib/store";
 
 export default function ParentChildrenPage() {
   const students = useStudents();

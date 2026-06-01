@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -17,17 +17,17 @@ import {
   DialogFooter,
   DialogTrigger,
   DialogDescription,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+} from "../components/ui/dialog";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   Plus,
   NotebookPen,
@@ -45,7 +45,7 @@ import {
   useSubjects,
   useSections,
   lessonPlansApi,
-} from "@/lib/store";
+} from "../lib/store";
 const statusColor = {
   Draft: "bg-muted text-muted-foreground border-border",
   Submitted: "bg-info/10 text-info border-info/20",

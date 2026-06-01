@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { KpiCard } from "@/components/kpi-card";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Progress } from "../components/ui/progress";
+import { KpiCard } from "../components/kpi-card";
 import {
   CalendarDays,
   BookOpen,
@@ -23,7 +23,7 @@ import {
   FileBox,
   Megaphone,
 } from "lucide-react";
-import { useAuth } from "@/lib/auth";
+import { useAuth } from "../lib/auth";
 import {
   useAssignments,
   useSubmissions,
@@ -33,7 +33,7 @@ import {
   useStudents,
   useMarkEntries,
   useAcademicCalendar,
-} from "@/lib/store";
+} from "../lib/store";
 import { useMemo } from "react";
 const STUDENT_ID = "STU1000";
 const STUDENT_CLASS = "X-B";

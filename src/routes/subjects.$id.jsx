@@ -1,14 +1,19 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/card";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   Table,
   TableBody,
@@ -16,7 +21,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import { ArrowLeft, Pencil, Archive, Trash2, Activity } from "lucide-react";
 import { toast } from "sonner";
 import { useMemo } from "react";
@@ -26,7 +31,7 @@ import {
   useSections,
   useSubjectMappings,
   activityApi,
-} from "@/lib/store";
+} from "../lib/store";
 export default function SubjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();

@@ -1,11 +1,11 @@
 import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { Loader2 } from "lucide-react";
-import { AppSidebar } from "@/components/app-sidebar";
-import { MobileBottomNav } from "@/components/mobile-bottom-nav";
-import { Toaster } from "@/components/ui/sonner";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { Topbar } from "@/components/topbar";
-import { useAuth } from "@/lib/auth";
+import { AppSidebar } from "./components/app-sidebar";
+import { MobileBottomNav } from "./components/mobile-bottom-nav";
+import { Toaster } from "./components/ui/sonner";
+import { SidebarProvider } from "./components/ui/sidebar";
+import { Topbar } from "./components/topbar";
+import { useAuth } from "./lib/auth";
 import { appRoutes } from "./routes";
 
 const publicPaths = ["/login", "/signup", "/forgot-password"];

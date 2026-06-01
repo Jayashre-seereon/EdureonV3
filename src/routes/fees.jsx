@@ -1,14 +1,14 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   Table,
   TableBody,
@@ -16,14 +16,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   IndianRupee,
   TrendingUp,
@@ -50,10 +50,10 @@ import {
   Cell,
   Legend,
 } from "recharts";
-import { feeCollectionTrend } from "@/lib/mock";
-import { useFeeTxns, feeApi } from "@/lib/store";
+import { feeCollectionTrend } from "../lib/mock";
+import { useFeeTxns, feeApi } from "../lib/store";
 import { useState } from "react";
-import { FeeDialog } from "@/components/fee-dialog";
+import { FeeDialog } from "../components/fee-dialog";
 import { toast } from "sonner";
 const inr = (n) =>
   "₹" + (n >= 1e5 ? (n / 1e5).toFixed(2) + " L" : n.toLocaleString("en-IN"));

@@ -1,20 +1,20 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   Table,
   TableBody,
@@ -22,7 +22,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import { Download, Trophy } from "lucide-react";
 import { useState } from "react";
 import {
@@ -35,7 +35,7 @@ import {
   CartesianGrid,
   Legend,
 } from "recharts";
-import { KpiCard } from "@/components/kpi-card";
+import { KpiCard } from "../components/kpi-card";
 import { toast } from "sonner";
 const EXAMS = [
   "Mid-Term II — 2025-26",

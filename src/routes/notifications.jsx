@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Bell,
   Check,
@@ -28,7 +33,7 @@ import {
   useMarkEntries,
   useExams,
   useAssignments,
-} from "@/lib/store";
+} from "../lib/store";
 const ago = (ts) => {
   const diff = Date.now() - ts;
   if (diff < 60_000) return "just now";

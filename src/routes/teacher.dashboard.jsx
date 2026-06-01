@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { KpiCard } from "@/components/kpi-card";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { KpiCard } from "../components/kpi-card";
 import {
   CalendarCheck,
   ClipboardList,
@@ -21,7 +21,7 @@ import {
   Megaphone,
   AlertTriangle,
 } from "lucide-react";
-import { useAuth } from "@/lib/auth";
+import { useAuth } from "../lib/auth";
 import {
   useAssignments,
   useSubmissions,
@@ -29,7 +29,7 @@ import {
   useExams,
   useNotices,
   lessonPlansApi,
-} from "@/lib/store";
+} from "../lib/store";
 import { useMemo } from "react";
 const TEACHER = "A. Mehta";
 export default function TeacherDashboard() {

@@ -1,16 +1,21 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
+import { Switch } from "../components/ui/switch";
 import {
   Table,
   TableBody,
@@ -18,13 +23,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   Shield,
   Plus,
@@ -36,13 +41,13 @@ import {
   Trash2,
 } from "lucide-react";
 import { useState } from "react";
-import { CrudDialog } from "@/components/crud-dialog";
+import { CrudDialog } from "../components/crud-dialog";
 import {
   useCustomRoles,
   customRolesApi,
   usePermOverrides,
   permOverridesApi,
-} from "@/lib/store";
+} from "../lib/store";
 import { toast } from "sonner";
 const builtIn = [
   "Super Admin",

@@ -1,23 +1,28 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/select";
+import { Input } from "../components/ui/input";
+import { Badge } from "../components/ui/badge";
 import {
   BarChart3,
   Plus,
@@ -36,8 +41,8 @@ import {
   attendanceTrend,
   examPerformance,
   classDistribution,
-} from "@/lib/mock";
-import { useInstitutes } from "@/lib/store";
+} from "../lib/mock";
+import { useInstitutes } from "../lib/store";
 import {
   ResponsiveContainer,
   AreaChart,

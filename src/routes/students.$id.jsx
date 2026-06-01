@@ -1,14 +1,19 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Progress } from "@/components/ui/progress";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import { Progress } from "../components/ui/progress";
 import {
   Table,
   TableBody,
@@ -16,7 +21,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   ChevronLeft,
   ArrowUpRight,
@@ -40,10 +45,10 @@ import {
   useActivity,
   useNotes,
   useFeeTxns,
-} from "@/lib/store";
+} from "../lib/store";
 import { useState } from "react";
 import { toast } from "sonner";
-import { StudentDialog } from "@/components/student-dialog";
+import { StudentDialog } from "../components/student-dialog";
 export default function StudentDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();

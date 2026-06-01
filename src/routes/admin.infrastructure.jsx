@@ -1,14 +1,14 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
 import {
   Table,
   TableBody,
@@ -16,8 +16,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "../components/ui/table";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
 import {
   ChevronRight,
   ChevronDown,
@@ -30,8 +35,8 @@ import {
   Pencil,
 } from "lucide-react";
 import { useState } from "react";
-import { KpiCard } from "@/components/kpi-card";
-import { CrudDialog } from "@/components/crud-dialog";
+import { KpiCard } from "../components/kpi-card";
+import { CrudDialog } from "../components/crud-dialog";
 import { toast } from "sonner";
 const TREE = [
   {

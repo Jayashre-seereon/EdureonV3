@@ -1,10 +1,10 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+import { useAuth } from "../lib/auth";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Checkbox } from "../components/ui/checkbox";
 import { GraduationCap, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 export default function SignupPage() {

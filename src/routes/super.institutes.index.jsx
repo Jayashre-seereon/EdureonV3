@@ -1,16 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -18,8 +23,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
+} from "../components/ui/table";
+import { Input } from "../components/ui/input";
 import {
   Building2,
   Plus,
@@ -28,7 +33,7 @@ import {
   TrendingUp,
   Sparkles,
 } from "lucide-react";
-import { useInstitutes } from "@/lib/store";
+import { useInstitutes } from "../lib/store";
 import {
   ResponsiveContainer,
   AreaChart,

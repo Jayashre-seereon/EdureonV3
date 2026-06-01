@@ -12,10 +12,10 @@ import {
   SidebarHeader,
   SidebarFooter,
   useSidebar,
-} from "@/components/ui/sidebar";
-import { useAuth, initials } from "@/lib/auth";
-import { navForRole, portalLabelForRole } from "@/lib/portal-nav";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from "./ui/sidebar";
+import { useAuth, initials } from "../lib/auth";
+import { navForRole, portalLabelForRole } from "../lib/portal-nav";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 export function AppSidebar() {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";

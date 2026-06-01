@@ -1,9 +1,9 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
 import {
   Table,
   TableBody,
@@ -11,12 +11,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import { Users, Plus, Send, Phone, Mail, Search } from "lucide-react";
-import { useStudents } from "@/lib/store";
+import { useStudents } from "../lib/store";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-import { InviteDialog } from "@/components/invite-dialog";
+import { InviteDialog } from "../components/invite-dialog";
 export default function ParentsPage() {
   const students = useStudents();
   const [q, setQ] = useState("");

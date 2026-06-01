@@ -1,5 +1,5 @@
-import { useAuth, initials, roleLabel } from "@/lib/auth";
-import { portalHomeForRole } from "@/lib/portal-nav";
+import { useAuth, initials, roleLabel } from "../lib/auth";
+import { portalHomeForRole } from "../lib/portal-nav";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,10 +11,10 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
   DropdownMenuPortal,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+} from "./ui/dropdown-menu";
+import { Button } from "./ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Badge } from "./ui/badge";
 import { useNavigate, Link } from "react-router-dom";
 import {
   LogOut,
