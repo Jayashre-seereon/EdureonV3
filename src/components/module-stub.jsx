@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "./page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 import { Sparkles, Plus, Download, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CrudDialog } from "./crud-dialog";

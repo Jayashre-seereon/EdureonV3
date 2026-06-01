@@ -1,23 +1,28 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "../components/ui/select";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -25,7 +30,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   Dialog,
   DialogContent,
@@ -33,7 +38,7 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import {
   Plus,
   Boxes,
@@ -45,10 +50,10 @@ import {
   Building2,
   User,
 } from "lucide-react";
-import { KpiCard } from "@/components/kpi-card";
+import { KpiCard } from "../components/kpi-card";
 import { useState } from "react";
-import { CrudDialog } from "@/components/crud-dialog";
-import { useEmployees } from "@/lib/store";
+import { CrudDialog } from "../components/crud-dialog";
+import { useEmployees } from "../lib/store";
 import { toast } from "sonner";
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
 const newId = () => "AST-" + Math.floor(Math.random() * 9000 + 1000);

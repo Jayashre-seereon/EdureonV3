@@ -1,10 +1,10 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import {
   Table,
   TableBody,
@@ -12,14 +12,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -28,9 +28,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import { Plus, UserCog, ShieldCheck, Building2 } from "lucide-react";
-import { useAppUsers, useInstitutes, appUsersApi } from "@/lib/store";
+import { useAppUsers, useInstitutes, appUsersApi } from "../lib/store";
 import { useState } from "react";
 import { toast } from "sonner";
 const ASSIGNABLE_ROLES = ["admin", "principal", "accountant", "hr", "teacher"];

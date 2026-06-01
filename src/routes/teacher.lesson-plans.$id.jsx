@@ -1,18 +1,28 @@
 import { Link, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   ArrowLeft,
   Send,
@@ -29,7 +39,7 @@ import {
   useMaterials,
   lessonPlansApi,
   activityApi,
-} from "@/lib/store";
+} from "../lib/store";
 export default function LessonPlanDetail() {
   const { id } = useParams();
   useLessonPlans();

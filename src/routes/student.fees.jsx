@@ -1,14 +1,14 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Progress } from "../components/ui/progress";
 import {
   Table,
   TableBody,
@@ -16,9 +16,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import { Download, IndianRupee, CreditCard } from "lucide-react";
-import { KpiCard } from "@/components/kpi-card";
+import { KpiCard } from "../components/kpi-card";
 import { toast } from "sonner";
 const installments = [
   {

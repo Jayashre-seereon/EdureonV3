@@ -1,15 +1,20 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/card";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Progress } from "../components/ui/progress";
 import {
   Table,
   TableBody,
@@ -17,7 +22,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   ArrowLeft,
   Pencil,
@@ -40,7 +45,7 @@ import {
   useSubjectMappings,
   useStudents,
   activityApi,
-} from "@/lib/store";
+} from "../lib/store";
 export default function ClassDetail() {
   const { id } = useParams();
   const navigate = useNavigate();

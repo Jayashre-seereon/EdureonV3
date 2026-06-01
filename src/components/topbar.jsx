@@ -1,7 +1,7 @@
-import { SidebarTrigger } from "@/components/ui/sidebar";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { SidebarTrigger } from "./ui/sidebar";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 import { Bell, Search, Moon, Sun, HelpCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { UserMenu } from "./user-menu";

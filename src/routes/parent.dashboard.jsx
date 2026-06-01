@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { KpiCard } from "../components/kpi-card";
 import {
   Users,
   CalendarCheck,
@@ -21,7 +26,7 @@ import {
   useMarkEntries,
   useNotices,
   useLeaveRequests,
-} from "@/lib/store";
+} from "../lib/store";
 import { useMemo } from "react";
 const CHILD_ID = "STU1000";
 export default function ParentDashboard() {

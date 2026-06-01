@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Checkbox } from "../components/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -12,15 +12,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "../components/ui/table";
+import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -31,7 +31,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from "../components/ui/alert-dialog";
 import {
   Search,
   Plus,
@@ -51,10 +51,10 @@ import {
   ArrowLeftRight,
   Ban,
 } from "lucide-react";
-import { KpiCard } from "@/components/kpi-card";
-import { useStudents, studentsApi } from "@/lib/store";
+import { KpiCard } from "../components/kpi-card";
+import { useStudents, studentsApi } from "../lib/store";
 import { useMemo, useState } from "react";
-import { StudentDialog } from "@/components/student-dialog";
+import { StudentDialog } from "../components/student-dialog";
 import { toast } from "sonner";
 const feeColor = {
   Paid: "bg-success/10 text-success border-success/20",

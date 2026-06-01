@@ -1,14 +1,14 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
 import {
   Table,
   TableBody,
@@ -16,14 +16,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -32,9 +32,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+} from "../components/ui/dialog";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
 import { Plus, Download, Receipt, FileUp, Search } from "lucide-react";
 import { useState } from "react";
 import {
@@ -47,7 +47,7 @@ import {
   CartesianGrid,
   Legend,
 } from "recharts";
-import { KpiCard } from "@/components/kpi-card";
+import { KpiCard } from "../components/kpi-card";
 import { toast } from "sonner";
 const CATS = [
   "Utilities",

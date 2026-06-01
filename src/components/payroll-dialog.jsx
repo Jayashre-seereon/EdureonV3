@@ -6,17 +6,17 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "./ui/dialog";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "./ui/select";
 import {
   Table,
   TableBody,
@@ -24,9 +24,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { payrollApi, useEmployees } from "@/lib/store";
+} from "./ui/table";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
+import { payrollApi, useEmployees } from "../lib/store";
 import { toast } from "sonner";
 const months = [
   "January",

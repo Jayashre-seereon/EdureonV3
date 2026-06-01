@@ -1,5 +1,5 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
 const periods = [
   "08:00",
   "08:45",

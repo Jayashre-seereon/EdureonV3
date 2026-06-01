@@ -1,8 +1,8 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   Table,
   TableBody,
@@ -10,14 +10,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -28,7 +28,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from "../components/ui/alert-dialog";
 import {
   Search,
   Plus,
@@ -42,10 +42,10 @@ import {
   Trash2,
   Eye,
 } from "lucide-react";
-import { KpiCard } from "@/components/kpi-card";
-import { useEmployees, employeesApi } from "@/lib/store";
+import { KpiCard } from "../components/kpi-card";
+import { useEmployees, employeesApi } from "../lib/store";
 import { useMemo, useState } from "react";
-import { EmployeeDialog } from "@/components/employee-dialog";
+import { EmployeeDialog } from "../components/employee-dialog";
 import { toast } from "sonner";
 export default function EmployeesPage() {
   const employees = useEmployees();

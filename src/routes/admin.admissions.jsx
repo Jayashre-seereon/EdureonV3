@@ -1,19 +1,29 @@
 import { useNavigate } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/select";
+import { Checkbox } from "../components/ui/checkbox";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Plus,
   Search,
@@ -27,8 +37,8 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-import { NewInquiryDialog } from "@/components/new-inquiry-dialog";
-import { useInquiries, inquiriesApi, ADM_STAGES } from "@/lib/store";
+import { NewInquiryDialog } from "../components/new-inquiry-dialog";
+import { useInquiries, inquiriesApi, ADM_STAGES } from "../lib/store";
 const stageColor = {
   Inquiry: "border-l-muted-foreground",
   Lead: "border-l-info",

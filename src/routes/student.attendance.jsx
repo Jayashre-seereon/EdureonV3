@@ -1,13 +1,13 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { KpiCard } from "@/components/kpi-card";
+} from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { KpiCard } from "../components/kpi-card";
 import { CalendarCheck, AlertTriangle } from "lucide-react";
 import {
   ResponsiveContainer,

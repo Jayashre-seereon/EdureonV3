@@ -1,15 +1,15 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Progress } from "../components/ui/progress";
 import {
   Users,
   GraduationCap,
@@ -44,9 +44,9 @@ import {
   attendanceTrend,
   classDistribution,
   examPerformance,
-} from "@/lib/mock";
-import { useAuth } from "@/lib/auth";
-import { portalHomeForRole } from "@/lib/portal-nav";
+} from "../lib/mock";
+import { useAuth } from "../lib/auth";
+import { portalHomeForRole } from "../lib/portal-nav";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 const inr = (n) =>

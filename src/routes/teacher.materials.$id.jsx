@@ -1,9 +1,14 @@
 import { Link, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import { ArrowLeft, Archive, Download } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -11,7 +16,7 @@ import {
   useLessonPlans,
   materialsApi,
   activityApi,
-} from "@/lib/store";
+} from "../lib/store";
 export default function MaterialDetail() {
   const { id } = useParams();
   useMaterials();

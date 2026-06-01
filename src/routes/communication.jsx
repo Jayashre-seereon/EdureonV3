@@ -1,24 +1,29 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   MessageSquare,
   Send,
@@ -40,8 +45,8 @@ import {
 } from "recharts";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-import { useNotices, noticesApi, useSections } from "@/lib/store";
-import { useAuth } from "@/lib/auth";
+import { useNotices, noticesApi, useSections } from "../lib/store";
+import { useAuth } from "../lib/auth";
 const channels = [
   { d: "Mon", sms: 1240, push: 4820, email: 980 },
   { d: "Tue", sms: 1480, push: 5210, email: 1120 },

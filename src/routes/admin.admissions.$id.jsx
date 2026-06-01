@@ -1,22 +1,32 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Label } from "../components/ui/label";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/select";
+import { Checkbox } from "../components/ui/checkbox";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import { Progress } from "../components/ui/progress";
 import {
   ChevronLeft,
   ArrowRight,
@@ -40,7 +50,7 @@ import {
   useActivity,
   useNotes,
   studentsApi,
-} from "@/lib/store";
+} from "../lib/store";
 import { useState } from "react";
 import { toast } from "sonner";
 const stageColor = {

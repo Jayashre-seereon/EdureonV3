@@ -1,22 +1,27 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -24,9 +29,9 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "../components/ui/dialog";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import {
   CalendarDays,
   Sparkles,
@@ -44,7 +49,7 @@ import {
 } from "lucide-react";
 import { Fragment, useMemo, useState } from "react";
 import { toast } from "sonner";
-import { useTimetable, useTimetableMeta, timetableApi } from "@/lib/store";
+import { useTimetable, useTimetableMeta, timetableApi } from "../lib/store";
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const periods = [
   "08:00",

@@ -1,19 +1,19 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import { FileBox, Download, Search, ExternalLink } from "lucide-react";
 import { useState, useMemo } from "react";
 import { toast } from "sonner";
-import { useMaterials, useSubjects, materialsApi } from "@/lib/store";
+import { useMaterials, useSubjects, materialsApi } from "../lib/store";
 const STUDENT_CLASS = "X-B";
 export default function StudentMaterials() {
   const materials = useMaterials();

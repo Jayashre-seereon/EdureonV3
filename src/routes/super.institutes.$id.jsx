@@ -1,16 +1,21 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -18,7 +23,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   Building2,
   Users,
@@ -40,8 +45,8 @@ import {
   useAppUsers,
   useStudents,
   useEmployees,
-} from "@/lib/store";
-import { useAuth } from "@/lib/auth";
+} from "../lib/store";
+import { useAuth } from "../lib/auth";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -57,7 +62,7 @@ import {
   feeCollectionTrend,
   attendanceTrend,
   classDistribution,
-} from "@/lib/mock";
+} from "../lib/mock";
 import { toast } from "sonner";
 const inr = (n) =>
   "₹" +

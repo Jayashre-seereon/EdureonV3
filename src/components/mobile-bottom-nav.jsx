@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { useAuth } from "@/lib/auth";
-import { navForRole } from "@/lib/portal-nav";
-import { cn } from "@/lib/utils";
+import { useAuth } from "../lib/auth";
+import { navForRole } from "../lib/portal-nav";
+import { cn } from "../lib/utils";
 export function MobileBottomNav() {
   const { user } = useAuth();
   const { pathname } = useLocation();

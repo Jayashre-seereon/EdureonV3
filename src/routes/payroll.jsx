@@ -1,14 +1,14 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   Table,
   TableBody,
@@ -16,14 +16,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   Briefcase,
   IndianRupee,
@@ -37,7 +37,7 @@ import {
   Trash2,
   Pencil,
 } from "lucide-react";
-import { usePayrollRuns, payrollApi, useEmployees } from "@/lib/store";
+import { usePayrollRuns, payrollApi, useEmployees } from "../lib/store";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -48,7 +48,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import { useState } from "react";
-import { PayrollDialog } from "@/components/payroll-dialog";
+import { PayrollDialog } from "../components/payroll-dialog";
 import { toast } from "sonner";
 const inr = (n) =>
   "₹" + (n >= 1e5 ? (n / 1e5).toFixed(2) + " L" : n.toLocaleString("en-IN"));

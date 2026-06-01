@@ -1,17 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -19,15 +24,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/table";
+import { Progress } from "../components/ui/progress";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   BookOpen,
   Plus,
@@ -41,7 +46,7 @@ import {
   Pencil,
   Trash2,
 } from "lucide-react";
-import { examPerformance } from "@/lib/mock";
+import { examPerformance } from "../lib/mock";
 import {
   ResponsiveContainer,
   BarChart,
@@ -58,8 +63,8 @@ import {
 } from "recharts";
 import { useState } from "react";
 import { toast } from "sonner";
-import { CrudDialog } from "@/components/crud-dialog";
-import { useExams, useQuestions, examsApi, questionsApi } from "@/lib/store";
+import { CrudDialog } from "../components/crud-dialog";
+import { useExams, useQuestions, examsApi, questionsApi } from "../lib/store";
 const marks = Array.from({ length: 14 }).map((_, i) => ({
   roll: i + 1,
   name:

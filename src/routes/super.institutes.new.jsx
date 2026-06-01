@@ -1,25 +1,25 @@
 import { useNavigate } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/select";
+import { Textarea } from "../components/ui/textarea";
+import { Badge } from "../components/ui/badge";
+import { Progress } from "../components/ui/progress";
 import {
   Check,
   ChevronLeft,
@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { institutesApi } from "@/lib/store";
+import { institutesApi } from "../lib/store";
 const STEPS = [
   { id: 1, title: "Basic Info", desc: "Identity & branding" },
   { id: 2, title: "Contact & Address", desc: "Location details" },

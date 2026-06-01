@@ -1,21 +1,21 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
+import { PageContainer, PageHeader } from "../components/page-shell";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+} from "../components/ui/select";
+import { Badge } from "../components/ui/badge";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
 import {
   Dialog,
   DialogContent,
@@ -23,7 +23,7 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import {
   CalendarCheck,
   Save,
@@ -33,7 +33,7 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
-import { useStudents } from "@/lib/store";
+import { useStudents } from "../lib/store";
 const SECTIONS = ["X-B", "X-A", "IX-A", "VIII-B"];
 const fmt = (d) =>
   d.toLocaleDateString("en-IN", {

@@ -1,22 +1,27 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import {
   Table,
   TableBody,
@@ -24,9 +29,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from "../components/ui/table";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -34,7 +39,7 @@ import {
   DialogTitle,
   DialogFooter,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import {
   CheckCircle2,
   XCircle,
@@ -57,8 +62,8 @@ import {
   correctionApi,
   attendanceApi,
   useActivity,
-} from "@/lib/store";
-import { attendanceTrend } from "@/lib/mock";
+} from "../lib/store";
+import { attendanceTrend } from "../lib/mock";
 import {
   ResponsiveContainer,
   LineChart,

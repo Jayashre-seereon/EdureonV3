@@ -1,16 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { KpiCard } from "@/components/kpi-card";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { KpiCard } from "../components/kpi-card";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -18,15 +23,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Progress } from "@/components/ui/progress";
+} from "../components/ui/table";
+import { Progress } from "../components/ui/progress";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import {
   CalendarDays,
   School,
@@ -41,7 +46,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
-import { CrudDialog } from "@/components/crud-dialog";
+import { CrudDialog } from "../components/crud-dialog";
 import {
   useSections,
   useSubjects,
@@ -51,7 +56,7 @@ import {
   useAcademicCalendar,
   subjectMappingsApi,
   academicCalendarApi,
-} from "@/lib/store";
+} from "../lib/store";
 export default function ClassesPage() {
   const navigate = useNavigate();
   const sections = useSections();

@@ -1,10 +1,15 @@
-import { PageContainer, PageHeader } from "@/components/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { PageContainer, PageHeader } from "../components/page-shell";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "../components/ui/tabs";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +17,7 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import {
   ClipboardList,
   Upload,
@@ -22,7 +27,7 @@ import {
 } from "lucide-react";
 import { useState, useMemo } from "react";
 import { toast } from "sonner";
-import { useAssignments, useSubmissions, submissionsApi } from "@/lib/store";
+import { useAssignments, useSubmissions, submissionsApi } from "../lib/store";
 const STUDENT_ID = "STU1000";
 const STUDENT_NAME = "Aarav Sharma";
 const STUDENT_CLASS = "X-B";
