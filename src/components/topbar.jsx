@@ -27,7 +27,7 @@ export function Topbar() {
         </kbd>
       </div>
       <div className="flex-1 md:hidden" />
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1.5 ml-auto ">
         <Badge
           variant="secondary"
           className="hidden lg:inline-flex h-6 text-[10px] font-medium uppercase tracking-wider"

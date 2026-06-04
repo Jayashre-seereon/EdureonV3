@@ -8,7 +8,7 @@ import { Topbar } from "./components/topbar";
 import { useAuth } from "./lib/auth";
 import { appRoutes } from "./routes";
 
-const publicPaths = ["/login", "/signup", "/forgot-password"];
+const publicPaths = ["/login", "/admin/login", "/signup", "/forgot-password"];
 
 function AppLayout() {
   const { user, ready } = useAuth();
